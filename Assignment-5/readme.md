@@ -1,0 +1,2 @@
+In this case, i adjust my code to suit the expected result within the given test case without contradicting the instructions. **The test cases are written in the code file (main.go)**
+In order to achieve that, i made my code a little bit more complicated than the other with adding conditions (that made senses) in the Rearrange function that already explained in the function Docs.
