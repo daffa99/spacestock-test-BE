@@ -44,7 +44,7 @@ func TestPostNewApartment(t *testing.T) {
 	}
 }
 
-// Test POST Apartment with duplicate ID
+// TestPostNewApartmentDuplicateID to Test POST Apartment with duplicate ID
 func TestPostNewApartmentDuplicateID(t *testing.T) {
 	// Set testing ENV so it switch the database to "spacestock_be_test"
 	err := os.Setenv("IS_TESTING", "true")
@@ -66,7 +66,7 @@ func TestPostNewApartmentDuplicateID(t *testing.T) {
 	c := e.NewContext(req, rec)
 
 	err = controllers.PostNewApartment(c)
-	// assertions
+	// assertions error
 	if assert.NotNil(t, err) {
 		he, ok := err.(*echo.HTTPError)
 		if ok {
@@ -75,6 +75,7 @@ func TestPostNewApartmentDuplicateID(t *testing.T) {
 	}
 }
 
+// TestGetApartment to Test GET List of Apartments
 func TestGetApartment(t *testing.T) {
 	// Set testing ENV so it switch the database to "spacestock_be_test"
 	err := os.Setenv("IS_TESTING", "true")
@@ -94,6 +95,7 @@ func TestGetApartment(t *testing.T) {
 	}
 }
 
+// TestPutApartmentByID Test Update or Edit Apartment
 func TestPutApartmentByID(t *testing.T) {
 	expectedValue := `{"id":1,"name":"Test Edit","location":"Jakarta Barat","price":1800000000,"unit":1}
 `
@@ -125,6 +127,7 @@ func TestPutApartmentByID(t *testing.T) {
 	}
 }
 
+// TestDeleteApartmentByID to Test Delete Apartment
 func TestDeleteApartmentByID(t *testing.T) {
 	// Set testing ENV so it switch the database to "spacestock_be_test"
 	err := os.Setenv("IS_TESTING", "true")
@@ -147,7 +150,7 @@ func TestDeleteApartmentByID(t *testing.T) {
 	}
 }
 
-// Test PUT Apartment with ID not found
+// TestPutApartmentNotFound to Test PUT Apartment with ID not found
 func TestPutApartmentNotFound(t *testing.T) {
 	// Set testing ENV so it switch the database to "spacestock_be_test"
 	err := os.Setenv("IS_TESTING", "true")
@@ -171,7 +174,7 @@ func TestPutApartmentNotFound(t *testing.T) {
 	c.SetParamValues("3")
 
 	err = controllers.PutApartmentByID(c)
-	// assertions
+	// assertions error
 	if assert.NotNil(t, err) {
 		he, ok := err.(*echo.HTTPError)
 		if ok {
