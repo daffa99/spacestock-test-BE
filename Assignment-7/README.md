@@ -8,5 +8,5 @@
 4. **Delete Apartment by ID**
    - **DELETE** `/apartment/:id` `PARAM: -`
 
-## Database Usage
-> Using Mongodb (mongo-driver) with 2 databases. 1 for REST Service CRUD and 1 for [testing](https://github.com/daffa99/spacestock-test-BE/blob/master/Assignment-7/controllers/apartment_test.go)
+## Database & [Unit Test](https://github.com/daffa99/spacestock-test-BE/blob/master/Assignment-7/controllers/apartment_test.go)
+> Using Mongodb (mongo-driver) with 2 databases. 1 for REST Service CRUD and 1 for unit test. The unit test file is placed inside the controller folder.
